@@ -57,7 +57,7 @@ def _subquadratic_multiply(x,y):
 
     L = _subquadratic_multiply(x_left,y_left)
     leftSum = bit_shift(L,n)
-
+    
     rightSum = _subquadratic_multiply(x_right,y_right)
     Mid = _subquadratic_multiply(BinaryNumber(x_left.decimal_val+x_right.decimal_val),BinaryNumber(y_left.decimal_val+y_right.decimal_val))
     inner = Mid.decimal_val - L.decimal_val - rightSum.decimal_val
@@ -76,6 +76,7 @@ def test_multiply():
 
 def time_multiply(x, y, f):
     start = time.time()
+    # multiply two numbers x, y using function f
     return (time.time() - start)*1000
 
     
